@@ -66,3 +66,7 @@ class APITests(unittest.TestCase):
         resp = self.client.post("/total/", json=[1, 2.5, 3])
         assert resp.status_code == 200
         assert resp.get_json()["total"] == 6.5
+
+    def test_malformed_json(self):
+        resp = self.client.post("/total/", data="[1, 2, ", content_type="application/json")
+        assert resp.status_code == 400
