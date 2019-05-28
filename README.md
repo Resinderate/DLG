@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/Resinderate/DLG.svg?branch=master)](https://travis-ci.org/Resinderate/DLG)
 
-App to which acts as a web api with an endpoint to total a given list of numbers.
+App to which acts as a HTTP Web API with an endpoint to total a given list of numbers.
 
 ## Assumptions
 - Should `POST` to `/total/`
@@ -40,7 +40,7 @@ curl -X POST \
 
 Running on Raspberry Pi at home, using nginx as a reverse proxy, and supervisord to run/keep up the flask process.
 
-## Todo
+## To Do
 - When providing invalid input, like `[1, 2, "three"]`, give more info about the problem element.
 - Add deploy script, and deploy steps to Travis CI, to deploy code on changes to master.
 - Make `scripts/run.sh` a bit more generic to be useful outside of own host environment.
