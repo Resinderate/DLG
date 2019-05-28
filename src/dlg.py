@@ -11,6 +11,12 @@ def invalid_request(reason, status_code=400):
 
 @app.route("/total/", methods=["POST"])
 def total():
+    """Resonsible for handling requests to /total/ and summing the provided list.
+
+    Will error if no json is provided.
+    Will error if the contents are not a single list like `[1, 2, 3]`
+    Will error if all the contents are not numeric.
+    """
     if not request.is_json:
         return invalid_request("Was expecting a mimetype of application/json")
 
