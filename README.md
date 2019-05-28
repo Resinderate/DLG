@@ -10,6 +10,7 @@ App to which acts as a HTTP Web API with an endpoint to total a given list of nu
 - Should use `application/json` for body, as opposed to something like query params.
 - The contents should just be a list, like `[1, 2, 3]`, as opposed to something like `{"the_list": [1, 2, 3]}`
 - The contents are all numeric. Eg, `1`, `1.2` will work. `"1"`, `"one"`, etc will error with a `400`
+- An empty list `[]` should return a total of `0`.
 
 ## Setup
 Inside a virtual environment.
