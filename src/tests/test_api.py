@@ -1,3 +1,4 @@
+"""Tests for dlg module."""
 import unittest
 
 from src.dlg import app
@@ -10,6 +11,7 @@ class APITests(unittest.TestCase):
         app.testing = True
 
     def test_total_endpoint_exists(self):
+        """Might error, but make sure it's not a 404."""
         resp = self.client.post("/total/")
         assert resp.status_code != 404
 
